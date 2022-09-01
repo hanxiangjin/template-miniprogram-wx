@@ -1,0 +1,41 @@
+.login {
+  width: calc(100vw - 80rpx);
+  display: flex;
+  padding: 40rpx;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yn_logo {
+  width: 292rpx;
+  height: 110rpx;
+  margin-top: 160rpx;
+}
+
+.desc {
+  margin: 48rpx 0 240rpx 0;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 44rpx;
+  letter-spacing: 16rpx;
+}
+
+.button {
+  height: 100rpx;
+  width: 100% !important;
+  margin: 0 !important;
+  background-color: #009943;
+  color: #fff;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button image {
+  height: 36rpx;
+  width: 44rpx;
+  margin-right: 12rpx;
+}

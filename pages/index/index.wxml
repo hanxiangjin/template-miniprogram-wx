@@ -1,0 +1,8 @@
+
+<view class="login" wx:if="{{ isShow }}">
+  <view class="desc">WELCOME!</view>
+  <button open-type="getPhoneNumber" class="button" bindgetphonenumber="getPhoneNumber" open-type="getPhoneNumber">
+    <!-- <image class="button-img" src="../../assets/images/wechat_logo.png"></image> -->
+    <text>微信一键授权登录</text>
+  </button>
+</view>
