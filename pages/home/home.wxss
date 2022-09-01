@@ -1,1 +1,3 @@
-/* pages/home/home.wxss */
+.p-home {
+  padding: 20rpx;
+}

@@ -7,6 +7,7 @@
 # 目录结构描述
     ├── ReadMe.md           // 帮助文档
     ├── pages               // 小程序基本页面
+    │    ├── components     // UI组件库
     │    ├── index          // 一键登录页面
     │    └── home           // 主要组件展示页面
     ├── utils               // 工具类脚本

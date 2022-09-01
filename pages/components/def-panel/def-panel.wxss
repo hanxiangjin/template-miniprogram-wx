@@ -1,0 +1,34 @@
+.def_panel {
+  width: 100%;
+}
+.row {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+  font-size: 32rpx;
+}
+
+.label {
+  flex: 3;
+  padding-bottom: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #79867E;
+  line-height: 44rpx;
+}
+
+.inputArea {
+  flex: 7;
+  border-bottom: 2rpx solid #ccc;
+  padding-bottom: 20rpx;
+}
+
+.errClass {
+  border-bottom: 2rpx solid red;
+}
+
+.panel_picker {
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-direction: row !important;
+}

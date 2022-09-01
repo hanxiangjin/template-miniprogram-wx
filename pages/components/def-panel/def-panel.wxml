@@ -1,0 +1,95 @@
+<view class="def_panel">
+  <view class="row" wx:for="{{formList}}" data-key="{{item.key}}" wx:if="{{item.type !== 'ifShow'}}" hidden="{{item.hidden}}">
+    <view class="label">{{item.label}}</view>
+    <view class="inputArea {{errIndex === index ? 'errClass' : ''}}">
+      <input wx:if="{{item.type === 'input'}}"
+        data-key="{{item.key}}"
+        data-index="{{index}}"
+        data-type="{{item.type}}"
+        type="text"
+        disabled="{{item.disable}}"
+        name="{{item.key}}" 
+        value="{{item.value}}"
+        placeholder="请输入{{item.label}}{{item.require ? '' : '(选填)'}}"
+        bindinput="handleChange"/>
+
+      <def-radio
+        data-type="{{item.type}}"
+        data-index="{{index}}"
+        data-disable="{{item.disable}}"
+        wx:if="{{item.type === 'radio'}}" 
+        data-key="{{item.key}}" 
+        radioList="{{item.radioList}}" 
+        activeIndex="{{item.curIndex}}"
+        bind:selectRadio="handleChange"/>
+
+      <picker
+        data-type="{{item.type}}"
+        data-index="{{index}}"
+        data-rindex="{{item.rindex}}"
+        wx:if="{{item.type === 'select'}}"
+        data-key="{{item.key}}" 
+        bindchange="handleChange" 
+        value="{{item.value}}" 
+        range-key="{{item.rang_key}}" 
+        range="{{item.rangeList}}">
+        <view class="panel_picker">
+          <view class="picker">
+            <text style="color:#ccc;font-size:32rpx;" 
+              wx:if="{{isEmpty(item.rindex)}}">请选择{{item.label}}</text>
+              <!-- {{item.rangeList[item.rindex].name}} -->
+              {{filter.getName(item.value, item.rangeList)}}
+          </view>
+          <view style="margin-right:20rpx;">></view>
+        </view>
+      </picker>
+
+      <!-- 日期选择器 -->
+      <datetime-picker
+        data-type="{{item.type}}"
+        data-index="{{index}}"
+        bind:updateDate="handleChange"
+        exttime="{{item.value}}"
+        wx:if="{{item.type === 'date'}}"/>
+
+      <!-- 级联选择器 -->
+      <treeSelect
+        data-type="{{item.type}}"
+        data-index="{{index}}"
+        data-key="{{item.key}}"
+        textname="{{item.text}}"
+        value="{{item.value}}"
+        wx:if="{{item.type === 'treeSelect'}}"
+        model='{{item.selectArray}}' 
+        bind:tapitem='handleChange' />
+    </view>
+  </view>
+</view>
+
+<wxs module="filter">
+  var getName = function (val, arr) {
+	  console.log(JSON.stringify(val), JSON.stringify(arr), '------------> fliter')
+    var res = arr.filter(function (item) {
+      return item.id === parseInt(val)
+    })
+    if (res.length > 0) {
+      if (res[0].name.length > 10) {
+        return res[0].name.slice(0, 10) + '...'
+      } else {
+        return res[0].name
+      }
+    } else {
+      return ''
+    }
+    return res.length > 0 ? res[0].name : ''
+  }
+  
+  var isEmpty = function (val) {
+    return val === '' || val === null || val === undefined
+  }
+  
+  module.exports = {
+    getName: getName,
+    isEmpty: isEmpty
+  }
+</wxs>

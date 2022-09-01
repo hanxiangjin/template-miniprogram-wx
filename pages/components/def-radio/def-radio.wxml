@@ -1,0 +1,8 @@
+<view class="def_radio">
+  <view wx:for="{{radioList}}" data-index="{{index}}" class="radio_item" data-val="{{item}}" bindtap="selectRaio">
+    <view class="out_circle {{ activeIndex === index ? 'activeClass' : '' }}">
+      <view class="in_circle"></view>
+    </view>
+    {{item.name}}
+  </view>
+</view>

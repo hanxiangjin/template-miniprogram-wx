@@ -1,0 +1,12 @@
+<picker
+    bind:change="_handleChange"
+    bind:columnchange="_handleColumnChange"
+    bind:cancel="_handleCancel"
+    mode="multiSelector"
+    range="{{ dateTimeArray }}"
+    value="{{ dateTime }}">
+  <view>
+    <text
+        class="{{ currentDate ? 'd-text' : 'd-placeholder'}}">{{ currentDate || placeholder }}</text>
+  </view>
+</picker>

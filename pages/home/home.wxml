@@ -1,2 +1,7 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="p-home">
+  <def-content
+    title="{{item.name}}"
+    wx:for="{{components}}">
+    <view slot="description">{{item.description}}</view>
+  </def-content>
+</view>

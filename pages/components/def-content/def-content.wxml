@@ -1,0 +1,5 @@
+<view class="c-container">
+  <view class="title">{{title}}</view>
+  <slot name="description"></slot>
+  <slot name="fragment"></slot>
+</view>

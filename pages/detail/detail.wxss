@@ -1,0 +1,16 @@
+.left {
+  padding: 20rpx;
+}
+.fragment {
+  color: #333;
+  font-size: 24rpx;
+  background-color: #f8f8f8;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  line-height: 50rpx;
+}
+.subtitle {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+}

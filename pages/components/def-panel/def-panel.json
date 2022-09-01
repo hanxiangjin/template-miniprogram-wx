@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "def-radio": "../def-radio/def-radio",
+    "datetime-picker": "../datetime-picker/datetime-picker",
+    "treeSelect": "../treeSelect/treeSelect"
+  }
+}

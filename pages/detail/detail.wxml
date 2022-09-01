@@ -1,0 +1,32 @@
+<view class="p-detail">
+  <view class="calender">
+    <!-- 日历组件 -->
+    <view class="left">
+      <!-- 介绍区域 -->
+      <def-content title="介绍">
+        <view slot="description">日历组件用于选择日期或日期区间。</view>
+      </def-content>
+      <def-content title="参数介绍">
+        <view slot="fragment" class="fragment">
+          <view><span class="subtitle">title</span>: 设置日历标题。</view>
+          <view><span class="subtitle">goNow</span>: 是否展示回到今日按钮。</view>
+        </view>
+      </def-content>
+      <def-content title="核心API">
+        <view slot="fragment" class="fragment">
+          <view><span class="subtitle">bindgetDateList</span>: 获取需要遍历的日历数组数据。</view>
+          <view><span class="subtitle">bindselectDay</span>: 获取当前选择的具体时间日期。</view>
+        </view>
+      </def-content>
+    </view>
+    <view class="right">
+      <!-- 展示区域 -->
+      <def-calender
+        title="打卡记录"
+        goNow="{{true}}"
+        spotMap="{{spotMap}}"
+        bindgetDateList="getDateList"
+        bindselectDay="selectDay"/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class='com-selectBox'>
+    <view class='com-sContent' bindtap='selectToggle'>
+        <view class='com-sTxt' style="color:{{nowText==='请选择'?'#666':'#000'}}">{{nowText}}</view>
+        <image src='../../../assets/images/show_more.png' class='com-sImg'></image>
+    </view>
+    
+    <view class='com-sList' wx:if="{{selectShow}}">
+      <view wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+        <mytree wx:for='{{ model.children }}' wx:key='id' model='{{ item }}'  bind:tapitem='tapItem'></mytree>
+      </view>
+    </view>
+</view>
